@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Website</title>
+
+    <!-- Google-Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CDN -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+html {
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
+
+body {
+            font-family: 'Playfair Display', serif;
+        }
+
+
+        .carousel-item {
+        transition: transform 0.6s ease-in-out;
+      }
+      .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+        display: block !important;
+      }
+
+        /* Animation */
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 15px;
+            background-color: #f8f9fa; /* Light grey background */
+            border: 1px solid #dee2e6; /* Subtle border */
+            border-radius: 8px; /* Slightly rounded corners */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .card img {
+            object-fit: cover;
+            height: 200px;
+            border-radius: 8px;
+
+        }
+
+        .more-to-love-heading {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        /* Scrollable section */
+        .scroll-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px 0;
+        }
+
+        .scroll-container .card {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .scroll-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .scroll-button svg {
+            fill: #343a40;
+            width: 50px;
+            height: 50px;
+            transition: fill 0.3s;
+        }
+
+        .scroll-button:hover svg {
+            fill: #ffc107;
+        }
+
+        /* Custom button styles */
+        .btn-custom {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: #fff;
+            background-color: #343a40;
+            border: none;
+        }
+
+        .btn-custom:hover {
+            background-color: #ffc107;
+            color: #343a40;
+        }
+
+        .card-professional {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-professional .card-img-top {
+            height: 400px;
+            object-fit: cover;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .card-professional .card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-professional .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card-professional .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        body {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+        }
+
+        /* Navbar Styling */
+
+        .navbar-custom {
+            background-color: #343a40;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #fff;
+            transition: color 0.6s;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #ffc107;
+        }
+
+        .navbar-custom .nav-link.active {
+            color: #ffc107;
+        }
+
+        /* Carousel Styling */
+
+        .carousel-item {
+            transition: transform 0.7s ease, opacity 0.5s ease;
+        }
+
+
+        /* Adjust Carousel Styling */
+
+        .carousel-item {
+            height: 916px; 
+            position: relative;
+        }
+
+        .carousel-item img {
+            object-fit: cover; 
+            height: 100%; 
+            width: 100%; 
+        }
+
+        /* Adjust Carousel Caption */
+
+        .carousel-caption {
+           bottom: 30%; /* Adjust caption positioning */
+           left: 0;
+           right: 0;
+           padding: 3rem;
+           font-size: 18px;
+           display: flex;
+           gap: 20px;
+           background-color: none; /* Semi-transparent background */
+           color: #fff;
+           animation: fadeInUp 2s ease-in-out;
+           transition: transform 0.15s, box-shadow 0.15s;
+           font-family: 'Playfair Display', serif;
+           font-weight: bold;
+           color: #dfd9d9; 
+           text-align: center;
+           margin: 40px 0; 
+        }
+
+
+        @keyframes fadeInUp {
+            0% {
+            opacity: 0;
+            transform: translateY(80px); /* Start from 20px below */
+        }
+            100% {
+            opacity: 1;
+            transform: translateY(0); /* End at the original position */
+        }   
+
+        }
+
+        .section {
+            padding: 60px 0;
+            background-image: url(https://images.hdqwalls.com/wallpapers/elden-ring-shadow-of-the-erdtree-zu.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+        }
+
+        .image-container{
+            padding: 100px 0;
+           background-image: url(https://images7.alphacoders.com/121/1214933.jpg); /*https://images.hdqwalls.com/wallpapers/elden-ring-2024-4k-ga.jpg */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+        }
+
+        .section-header h2{
+            color: rgb(246, 164, 11);
+
+        }
+
+        .section-header p{
+            font-size: 18px;
+        }
+
+        .card {
+        transition: transform 0.7s ease, box-shadow 0.7s ease;
+        margin: 15px;
+        font-weight: 200;
+        background-color: #151515; /* Light grey background */
+        color: rgb(255, 255, 255);
+        border: 1px solid #000000; /* Subtle border */
+        border-radius: 8px; /* Slightly rounded corners */
+    }
+
+    .card:hover {
+        transform: scale(1.07);
+    }
+
+        .footer {
+            background-color: #232222;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer a {
+            color: #f8f9fa;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffc107;
+        }
+        .nav-item{
+            font-size: 17px;
+            padding: 6px;
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+        }
+        .navbar-brand{
+            margin-right: 75%;
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+        }
+        .card{
+            margin: 15px;
+        }
+        .card-text{
+            font-size: 15px;
+        }
+        .card-title{
+            color: #e7a447;
+            font-weight: 600;
+        }
+        
+        
+        /* Horizontal Scroll Styling */
+        #image-gallery {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px 0;
+            margin-bottom: 60px;
+            border-top: 1px solid #ccc;
+        }
+
+        #image-gallery .card {
+            display: inline-block;
+            margin-right: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 250px;
+        }
+
+        #image-gallery .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #image-gallery img {
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        #image-gallery .card-title {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Smooth Scrolling for the Container */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none; /* For Firefox */
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+
+
+        .carousel-inner{
+            background-color: #e0e0e0;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-custom bg-dark">
+    <div class="container">
+        <a href="#home"><img src="sword.png" height='30px' width="30px" alt=""></a>
+        <a class="navbar-brand fw-bold" href="#home">EldenRing.net</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bootapple.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  href="#services">Store</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- sekiro carousel -->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators ">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images2.alphacoders.com/129/1291883.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3><b>Elden Ring: Unravel the mysteries</b></h3>
+            <h4>2020 - Game of the Year</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images4.alphacoders.com/115/1151244.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3><b>Exploring the Lands Between</b></h3>
+            <p>Vast landscapes filled with dangers and secrets.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.alphacoders.com/115/1151241.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3><b>Boss Fights: Testing Your Might</b></h3>
+            <p>Face off against terrifying enemies with unmatched power.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images4.alphacoders.com/115/1151246.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3><b>Redemption of the Lord Tarnished</b></h3>
+            <p>Forge your path to the Elden Lord shadow.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images4.alphacoders.com/121/1214929.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3><b>Crucible Knight & Misbegotten Warrior</b></h3>
+            <p>The mercy of intense combat.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.hdqwalls.com/wallpapers/elden-ring-shadow-of-the-erdtree-zu.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3><b>Shadow of the Erdtree</b></h3>
+            <p>The Erdtree's Twilight Shadow of mysteries.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images7.alphacoders.com/121/1218864.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3><b>Ranni the Witch : The powerful sorceress</b></h3>
+            <p>The Dark Moon's Witch</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://images3.alphacoders.com/130/1300675.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h3><b>Malenia, Blade of Miquella</b></h3>
+            <p>The great war between the demongods</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<!-- Services Section -->
+ 
+<section id="services" class="section bg-light">
+    <div class="container">
+        <div class="section-header">
+            <h2>Game Of The Year</h2>
+            <p style="color: white;font-size: 16px;font-weight: 600;">Elden Ring: A Journey Beyond Grace of Redefined Adventure</p>
+        </div>
+        <div class="row text-center fade-in-up">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="game2.jpg" height="100%" width="100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Malenia, Blade of Miquella</h5>
+<p class="card-text">Malenia is one of the most formidable demigods in *Elden Ring*, renowned for her exceptional skill in combat and her tragic backstory.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="game3.jpg" height="100%" width="100%">
+                    <div class="card-body">
+                        <h5 class="card-title">The Night Comet</h5>
+                        <p class="card-text">In her "Night Comet" form, Malenia becomes an even more formidable opponent, embodying the darkness.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="game4.jpg" height="100%" width="100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Shadow of the Erdtree</h5>
+                        <p class="card-text">As the source of the divine grace and the Elden Ring's power, the Erdtree's presence is both a guiding light</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="game5.jpg" height="100%" width="100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Starscourge Radahn</h5>
+                        <p class="card-text">Radahn's overwhelming strength and his connection to cosmic forces make him a significant challenge </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="game6.jpg" height="100%" width="100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Ranni the Witch</h5>
+                        <p class="card-text">Ranni’s quest revolves around her own ambitions and the manipulation of powerful forces, including her desire to reshape</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="game7.jpg" height="100%" width="100%">
+                    <div class="card-body">
+                        <h5 class="card-title">Lord of Blood</h5>
+                        <p class="card-text">The Lord of Blood is a formidable character in *Elden Ring*, known for his dark and menacing presence. As a powerful</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="image-container">
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3 class="mt-4 mb-4" style="color: #d4cfcf; font-family: 'Playfair Display', serif;
+            font-size: 28px; 
+            font-weight: bold;
+            color: #d4cfcf; 
+            text-align: center;
+            margin: 40px 0; "><b>Explore the darkness.</b>Realtime experinces with FromSoftware</h3>
+        </div>
+    </div><br>
+
+    <!-- First Set of Boxes -->
+     
+
+    <video controls autoplay loop muted>
+        <source src="eldenring-kf-01-animated-new.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+    
+    
+
+<br><br><br>
+</div>
+
+
+<!-- Add this CSS to your stylesheet -->
+    <style>
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding: 1rem 0;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+            position: relative;
+        }
+        
+        .scroll-container .card {
+            flex: 0 0 auto;
+            max-width: 300px; /* Adjust this width if necessary */
+            height: 450px; /* Set your desired height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Centers content vertically */
+            position: relative; /* For any absolute positioning if needed */
+            border: 1px solid #ddd; /* Optional: for better card visibility */
+        }
+        
+        .scroll-container .card-img-top {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain; /* Ensures the image fits within the card */
+            max-height: 80%; /* Limit the image height within the card */
+            margin: auto; /* Center the image */
+        }
+        
+        .scroll-container .card-body {
+            text-align: center;
+            padding: 0.5rem 0;
+            width: 100%;
+            flex-grow: 1; /* Ensures the body grows to fill remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: absolute; /* Ensures the body is positioned at the bottom */
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8); /* Optional: background to improve text readability */
+            width: 100%;
+        }
+        
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar */
+        }
+
+        .scroll-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background for better visibility */
+            color: white;
+            border: none;
+            padding: 10px 15px; /* Adjust padding for larger clickable area */
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%; /* Rounded buttons for better aesthetics */
+            border: 1px solid white; /* Optional: white border for visibility */
+        }
+
+        #scroll-left {
+            left: 10px; /* Positioning slightly inside the container */
+        }
+
+        #scroll-right {
+            right: 10px; /* Positioning slightly inside the container */
+        }
+
+        .professional-heading {
+             font-family: 'Playfair Display', serif;
+             font-size: 28px; 
+             font-weight: bold;
+             color: #d4cfcf; 
+             text-align: center;
+             margin: 40px 0; 
+        }
+        
+    </style>
+
+<h2 class="professional-heading">Explore the Characters of Elden Ring</h2>
+
+<div class="container-fluid py-4" id="image-gallery" style="position: relative;">
+    <button id="scroll-left" class="scroll-button">←</button>
+    <div class="scroll-container">
+        <div class="card" style="background-color: #181818; border: 2px solid black; border-radius: 8px;">
+            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-confessor-full.png?twic=v1/resize=350/step=10/quality=80" style="height: 100%;" class="card-img-top" alt="Image 1">
+            <div class="card-body" style="background-color: #060505;">
+                <h5 class="card-title" style="color: rgb(228, 226, 226);">Confessor</h5>
+            </div>
+        </div>
+        <div class="card" style="background-color: #181818;border: 2px solid black;border-radius: 8px;">
+            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-astrologer-full.png?twic=v1/resize=350/step=10/quality=80"style="height: 100%;"  class="card-img-top" alt="Image 2">
+            <div class="card-body" style="background-color: #060505;">
+                <h5 class="card-title" style="color: rgb(228, 226, 226);;">Astrologer</h5>
+            </div>
+        </div>
+        <div class="card" style="background-color: #181818;border: 2px solid black;border-radius: 8px;">
+            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-vagabond-full.png?twic=v1/resize=350/step=10/quality=80" style="height: 100%;" class="card-img-top" alt="Image 3">
+            <div class="card-body" style="background-color: #060505;">
+                <h5 class="card-title" style="color: rgb(228, 226, 226);;">Vagabond</h5>
+            </div>
+        </div>
+        <div class="card" style="background-color: #181818;border: 2px solid black;border-radius: 8px;">
+            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-warrior-full-new.png?twic=v1/resize=350/step=10/quality=80" style="height: 100%;" class="card-img-top" alt="Image 4">
+            <div class="card-body" style="background-color: #060505;">
+                <h5 class="card-title" style="color: rgb(228, 226, 226);">Warrior</h5>
+            </div>
+        </div>
+        <div class="card" style="background-color: #181818;border: 2px solid black;border-radius: 8px;">
+            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-samourai-full.png?twic=v1/resize=350/step=10/quality=80" style="height: 100%;"  class="card-img-top" alt="Image 5">
+            <div class="card-body" style="background-color: #060505;">
+                <h5 class="card-title" style="color: rgb(228, 226, 226);">Samourai</h5>
+            </div>
+        </div>
+        <div class="card" style="background-color: #181818;border: 2px solid black;border-radius: 8px;">
+            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-prophet-full.png?twic=v1/resize=350/step=10/quality=80" style="height: 100%;"  class="card-img-top" alt="Image 6">
+            <div class="card-body" style="background-color: #060505;">
+                <h5 class="card-title" style="color: rgb(228, 226, 226);">Prophet</h5>
+            </div>
+        </div>
+        <div class="card" style="background-color: #181818;border: 2px solid black;border-radius: 8px;">
+            <img src="https://p325k7wa.twic.pics/high/elden-ring/elden-ring/05-characters/elden-ring-character-prisoner-full.png?twic=v1/resize=350/step=10/quality=80" style="height: 100%;" class="card-img-top" alt="Image 7">
+            <div class="card-body" style="background-color: #060505;">
+                <h5 class="card-title" style="color: rgb(228, 226, 226);">Prisoner</h5>
+            </div>
+        </div>
+    </div>
+    <button id="scroll-right" class="scroll-button">→</button>
+</div>
+
+<script>
+    document.getElementById('scroll-left').onclick = function() {
+        document.querySelector('.scroll-container').scrollBy({ left: -300, behavior: 'smooth' });
+    };
+
+    document.getElementById('scroll-right').onclick = function() {
+        document.querySelector('.scroll-container').scrollBy({ left: 300, behavior: 'smooth' });
+    };
+</script>
+
+    <!-- More to Love Heading -->
+     
+    <div class="more-to-love-heading">
+        <h2 style="color: white;">More to Love</h2>
+        <h4 style="color: white;">Favorites</h4>
+    </div>
+
+            <h3 class="mt-4 mb-4" style="color: #d4cfcf; font-family: 'Playfair Display', serif;">Explore the World of Elden Ring</h3>
+            <p class="text-light">Dive deep into the mysteries and challenges of the Lands Between.</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Footer -->
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
