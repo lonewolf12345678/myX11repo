@@ -4,3 +4,4 @@ This is my first github repository
 Author - Lonewolf
 <br>
 {its a new line}
+<p>This is a paragraph</p>
